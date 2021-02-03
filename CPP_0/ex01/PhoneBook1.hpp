@@ -13,12 +13,10 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <ostream>
 
 class Book
 {
-	public:
-		void print_data(void);
-		bool exist;
 	private:
 		std::string first_name;
 		std::string last_name;
@@ -30,9 +28,10 @@ class Book
 		std::string birthday_date;
 		std::string favorite_meal;
 		std::string underwear_color;
-}
-
-void Book::print_data(void)
-{
-	std::cout<<
-}
+	public:
+		bool exist;
+		void get_name(void)
+		{
+			std::cout<<this->first_name<<" "<<this->last_name<<" "<<this->nickname<<"\n";
+		}
+};
