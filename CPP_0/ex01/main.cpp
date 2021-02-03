@@ -1,9 +1,22 @@
-#include "phonebook1.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/03 23:39:23 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/03 23:42:38 by youlee           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "phonebook.hpp"
 
 int main(void)
 {
     std::string input;
     Book user[8];
+    int i;
     
     init_user(user);
     while (1)
@@ -14,34 +27,74 @@ int main(void)
             exit(0);
         else if (input == "SEARCH")
         {
-            for(int i=0;i<8;i++)
+            for(i=0;i<8;i++)
             {
                 if (user[i].exist == true)
                 {
-                    printf("user access\n");
                     std::cout<<std::setw(10)<<std::right<<i<<"|";
-                    if (user[i].get_first_name().length() >= 10)
-                        user[i].get_first_name()[10] = '.';
-                    std::cout<<"user"<<user[i].get_first_name()<<"\n";
-                    std::cout<<std::setw(10)<<std::right<<user[i].get_first_name()<<"|";
-                    if (user[i].get_last_name().length() >= 10)
-                        user[i].get_last_name()[10] = '.';
-                    std::cout<<std::setw(10)<<std::right<<user[i].get_last_name()<<"|";
-                    if (user[i].get_nickname().length() >= 10)
-                        user[i].get_nickname()[10] = '.';
-                    std::cout<<std::setw(10)<<std::right<<user[i].get_nickname();
+                    print_info(user[i]);
                 }
             }
         }
         else if (input == "ADD")
         {
-            for(int i=0;i<8;i++)
+            if (check_full(user))
+                print_err();
+            else
             {
-                if (user[i].exist == false)
+                for(int i=0;i<8;i++)
                 {
-                    printf("index : %d\n",i);
-                    set_add(user[i]);
-                    break;
+                    if (user[i].exist == false)
+                    {
+                        std::string info;
+                        user[i].exist=true;
+                        std::cout<<"Please enter your first_name\n";
+                        std::cin>>info;
+                        user[i].set_first_name(info);
+
+                        std::cout<<"Please enter your last_name\n";
+                        std::cin>>info;
+                        user[i].set_last_name(info);
+
+                        std::cout<<"Please enter your nickname\n";
+                        std::cin>>info;
+                        user[i].set_nickname(info);
+
+                        std::cout<<"Please enter your login\n";
+                        std::cin>>info;
+                        user[i].set_login(info);
+
+                        std::cout<<"Please enter your postal address\n";
+                        std::cin>>info;
+                        user[i].set_postal_address(info);
+
+                        std::cout<<"Please enter your email address\n";
+                        std::cin>>info;
+                        user[i].set_email_address(info);
+
+                        std::cout<<"Please enter your phone number\n";
+                        std::cin>>info;
+                        user[i].set_phone_number(info);
+
+                        std::cout<<"Please enter your birthday date\n";
+                        std::cin>>info;
+                        user[i].set_birthday_date(info);
+
+                        std::cout<<"Please enter your favorite meal\n";
+                        std::cin>>info;
+                        user[i].set_favorite_meal(info);
+
+                        std::cout<<"Please enter your underwear color\n";
+                        std::cin>>info;
+                        user[i].set_underwear_color(info);
+
+                        std::cout<<"Please enter your darkest secret\n";
+                        std::cin>>info;
+                        user[i].set_darkest_secret(info);
+
+                        std::cout<<"Setup is complete\n";
+                        break;
+                    }
                 }
             }
         }
