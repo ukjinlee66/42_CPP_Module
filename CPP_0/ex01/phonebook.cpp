@@ -122,17 +122,74 @@ std::string Book::get_darkest_secret(void)
     return (this->darkest_secret);
 }
 
+void select_info(Book user[8])
+{
+    int idx;
+    int sel;
+
+    idx = 0;
+    for (int i=0;i<8;i++)
+    {
+        if (user[i].exist)
+            idx++;
+        else
+            break;
+    }
+    idx--;
+    std::cout<<"\nindex 0 - "<< idx << "select! user\n";
+    std::cin>>sel;
+    if (user[sel].exist)
+        select_print(user[sel]);
+    else
+        std::cout<<"wrong selection!\n";
+}
+
+void select_print(Book user)
+{
+    std::cout<<"first_name : " << user.get_first_name()<<std::endl;
+    std::cout<<"last_name : " << user.get_last_name()<<std::endl;
+    std::cout<<"nickname : " << user.get_nickname()<<std::endl;
+    std::cout<<"login : " << user.get_login()<<std::endl;
+    std::cout<<"postal_address : " << user.get_postal_address()<<std::endl;
+    std::cout<<"email_address : " << user.get_email_address()<<std::endl;
+    std::cout<<"phone_number : " << user.get_phone_number()<<std::endl;
+    std::cout<<"birthday_date : " << user.get_birthday_date()<<std::endl;
+    std::cout<<"favorite_meal : " << user.get_favorite_meal()<<std::endl;
+    std::cout<<"underwear_color : " << user.get_underwear_color()<<std::endl;
+    std::cout<<"darkest_secret : " << user.get_darkest_secret();
+}
+
 void print_info(Book user)
 {
-    if (user.get_first_name().length() >= 10)
-        (user.get_first_name())[10] = '.';
-    std::cout<<std::setw(10)<<std::right<<user.get_first_name()<<"|";
-    if (user.get_last_name().length() >= 10)
-         user.get_last_name()[10] = '.';
-    std::cout<<std::setw(10)<<std::right<<user.get_last_name()<<"|";
-    if (user.get_nickname().length() >= 10)
-        user.get_nickname()[10] = '.';
-    std::cout<<std::setw(10)<<std::right<<user.get_nickname();
+    std::string str;
+
+    if (user.get_first_name().length() > 10)
+    {
+        str = user.get_first_name();
+        str.insert(9, ".");
+        str = str.substr(0, 10);
+    }
+    else
+        str = user.get_first_name();
+    std::cout<<std::setw(10)<<std::right<< str <<"|";
+    if (user.get_last_name().length() > 10)
+    {
+        str = user.get_last_name();
+        str.insert(9, ".");
+        str = str.substr(0, 10);
+    }
+    else
+        str = user.get_last_name();
+    std::cout<<std::setw(10)<<std::right<< str <<"|";
+    if (user.get_nickname().length() > 10)
+    {
+        str = user.get_nickname();
+        str.insert(9, ".");
+        str = str.substr(0, 10);
+    }
+    else
+        str = user.get_nickname();
+    std::cout<<std::setw(10)<<std::right<< str;
 }
 
 void init_user(Book user[8])

@@ -58,3 +58,5 @@ void print_info(Book use);
 void init_user(Book user[8]);
 bool check_full(Book user[8]);
 void print_err(void);
+void select_print(Book user);
+void select_info(Book user[8]);

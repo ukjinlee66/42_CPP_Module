@@ -35,6 +35,7 @@ int main(void)
                     print_info(user[i]);
                 }
             }
+            select_info(user);
         }
         else if (input == "ADD")
         {
