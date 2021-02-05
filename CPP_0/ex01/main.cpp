@@ -22,7 +22,7 @@ int main(void)
     while (1)
     {
         std::cout<<"\n>";
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (input == "EXIT")
             exit(0);
         else if (input == "SEARCH")
@@ -49,48 +49,49 @@ int main(void)
                     {
                         std::string info;
                         user[i].exist=true;
+
                         std::cout<<"Please enter your first_name\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_first_name(info);
 
                         std::cout<<"Please enter your last_name\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_last_name(info);
 
                         std::cout<<"Please enter your nickname\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_nickname(info);
 
                         std::cout<<"Please enter your login\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_login(info);
 
                         std::cout<<"Please enter your postal address\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_postal_address(info);
 
                         std::cout<<"Please enter your email address\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_email_address(info);
 
                         std::cout<<"Please enter your phone number\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_phone_number(info);
 
                         std::cout<<"Please enter your birthday date\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_birthday_date(info);
 
                         std::cout<<"Please enter your favorite meal\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_favorite_meal(info);
 
                         std::cout<<"Please enter your underwear color\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_underwear_color(info);
 
                         std::cout<<"Please enter your darkest secret\n";
-                        std::cin>>info;
+                        std::getline(std::cin, info);
                         user[i].set_darkest_secret(info);
 
                         std::cout<<"Setup is complete\n";
