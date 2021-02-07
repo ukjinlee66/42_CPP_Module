@@ -9,6 +9,7 @@
 ## CPP Module 01 Reference<br>
 - <https://perfectacle.github.io/2017/02/09/Cpp-ref-002/> - Class Static allocation, Dynamic allocation<br>
 - <https://boycoding.tistory.com/244> - class constructor<br>
+- <https://word.tistory.com/24> - string stream<br>
 ## CPP Module 02 Reference<br>
 ## CPP Module 03 Reference<br>
 ## CPP Module 04 Reference<br>
