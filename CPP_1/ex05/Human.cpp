@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 17:20:38 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:39 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/07 17:30:12 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/07 17:30:13 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
+#include "Human.hpp"
 
-#include "Zombie.hpp"
-#include <ctime>
-
-class ZombieEvent
+const Brain Human::getBrain(void)
 {
-    public:
-        void set_type(std::string type);
-        std::string get_type(void);
-        Zombie* newZombie(std::string name);
-        Zombie* randomChump(void);
-    private:
-        std::string type;
-};
+    this->br = new Brain();
+    return (*(this->br));
+}
 
-#endif
+std::string identify(void)
+{
+    std::cout<<"0x"<< *this <<std::endl;
+}
+
+Human::Human(void)
+{
+
+}
+Human::~Human(void)
+{
+
+}

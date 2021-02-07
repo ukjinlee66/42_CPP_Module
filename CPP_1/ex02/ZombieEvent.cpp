@@ -12,6 +12,9 @@
 
 #include "ZombieEvent.hpp"
 
+std::string Namepool[10] = {"jason", "youlee", "junkang", "sseo", "hycho", "seoh", "seongwpa",
+"yong-lee", "dson", "jeoryu"};
+
 void ZombieEvent::set_type(std::string type)
 {
     this->type = type;
@@ -23,13 +26,13 @@ std::string ZombieEvent::get_type(void)
 
 Zombie* ZombieEvent::newZombie(std::string name)
 {
-    return (new Zombie(this->type, name));
+    return (new Zombie(name, this->type));
 }
 Zombie* ZombieEvent::randomChump(void)
 {
     int num;
 
-    std::srand(1214);
+    std::srand(time(0));
     num = std::rand()%10; // 0~9
     Zombie *z = new Zombie(Namepool[num], this->type);
     return (z);

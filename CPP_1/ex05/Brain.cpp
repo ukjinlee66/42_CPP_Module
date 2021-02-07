@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 17:20:38 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:39 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/07 17:29:53 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/07 17:29:54 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
+#include "Brain.hpp"
 
-#include "Zombie.hpp"
-#include <ctime>
-
-class ZombieEvent
+std::string Brain::identify(void)
 {
-    public:
-        void set_type(std::string type);
-        std::string get_type(void);
-        Zombie* newZombie(std::string name);
-        Zombie* randomChump(void);
-    private:
-        std::string type;
-};
+    std::cout<<"0x"<< *this <<std::endl;
+}
 
-#endif
+Brain::Brain(void)
+{
+
+}
+Brain::~Brain(void)
+{
+
+}

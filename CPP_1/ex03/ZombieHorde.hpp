@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 17:20:38 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:39 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/07 15:15:19 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/07 15:15:21 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
 
+#include "ZombieHorde.hpp"
 #include "Zombie.hpp"
 #include <ctime>
 
-class ZombieEvent
+class ZombieHorde
 {
-    public:
-        void set_type(std::string type);
-        std::string get_type(void);
-        Zombie* newZombie(std::string name);
-        Zombie* randomChump(void);
     private:
-        std::string type;
+        Zombie  *zomb;
+        int     num;
+    public:
+        ZombieHorde(void);
+        ZombieHorde(int n);
+        ~ZombieHorde();
+        void set_num(int n);
+        int  get_num(void);
+        void announce(void);
 };
-
 #endif

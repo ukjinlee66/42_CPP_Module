@@ -5,36 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 17:20:53 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:54 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/07 15:05:21 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/07 15:05:31 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
 int main(void)
 {
-    Zombie *z1;
-    ZombieEvent event;
-
-    z1 = new Zombie("first zom", "first type");
-    z1->announce();
-    delete (z1);
-
-    z1 = event.newZombie("second zom");
-    z1->announce();
-    delete (z1);
-
-    event.set_type("event type");
-    z1 = event.newZombie("thrid zom");
-    z1->announce();
-    delete (z1);
-
-    event.set_type("event type2");
-    z1 = event.randomChump();
-    z1->announce();
-    delete (z1);
-    
+    ZombieHorde z(5);
+    z.announce();
     return (0);
 }

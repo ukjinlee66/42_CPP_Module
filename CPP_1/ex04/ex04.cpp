@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 17:20:38 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:39 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/07 17:22:36 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/07 17:22:48 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
+#include <iostream>
+#include <string>
 
-#include "Zombie.hpp"
-#include <ctime>
-
-class ZombieEvent
+int main(void)
 {
-    public:
-        void set_type(std::string type);
-        std::string get_type(void);
-        Zombie* newZombie(std::string name);
-        Zombie* randomChump(void);
-    private:
-        std::string type;
-};
+    std::string str = "HI THIS IS BRAIN";
 
-#endif
+    std::string *pstr = &str;
+    std::string &str2 = str;
+
+    std::cout<< "str : " << str << "\n" <<
+    "*pstr : " << *pstr << "  pstr : " << pstr << "\n"
+    "&str2 : " << &str2 << "  str2 : " << str2 << "\n";
+}
