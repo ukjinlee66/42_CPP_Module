@@ -20,10 +20,10 @@
 class Human
 {
     private:
-        Brain *br;
+        const Brain br;
     public:
-        std::string identify(void);
-        Brain getBrain(void);
+        std::string identify(void) const;
+        const Brain& getBrain(void) const;
         Human(void);
         ~Human(void);
 };

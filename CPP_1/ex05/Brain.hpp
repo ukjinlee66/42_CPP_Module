@@ -18,9 +18,8 @@
 
 class Brain
 {
-    private:
     public:
-    std::string identify(void);
+    std::string identify(void) const;
     Brain(void);
     ~Brain(void);
 };

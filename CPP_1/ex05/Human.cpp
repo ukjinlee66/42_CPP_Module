@@ -12,15 +12,14 @@
 
 #include "Human.hpp"
 
-const Brain Human::getBrain(void)
+const Brain& Human::getBrain(void) const
 {
-    this->br = new Brain();
-    return (*(this->br));
+    return (this->br);
 }
 
-std::string identify(void)
+std::string Human::identify(void) const
 {
-    std::cout<<"0x"<< *this <<std::endl;
+    return(this->getBrain().identify());
 }
 
 Human::Human(void)

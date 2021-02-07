@@ -11,10 +11,16 @@
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+#include <sstream>
 
-std::string Brain::identify(void)
+std::string Brain::identify(void) const
 {
-    std::cout<<"0x"<< *this <<std::endl;
+    std::stringstream stream;
+
+	stream << std::showbase << std::hex;
+	stream << std::uppercase << (long)this;
+
+	return (stream.str());
 }
 
 Brain::Brain(void)
