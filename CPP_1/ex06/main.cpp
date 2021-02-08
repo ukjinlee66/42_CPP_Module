@@ -6,7 +6,7 @@
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 20:31:40 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/07 20:32:07 by youlee           ###   ########.fr       */
+/*   Updated: 2021/02/09 00:57:34 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int main(void)
             club.setType("some other type of club");
             jim.attack();
         }
+		return (0);
 }
