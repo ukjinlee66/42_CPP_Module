@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 17:29:53 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/07 17:29:54 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/08 23:53:07 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/08 23:53:08 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include <sstream>
+#include "HumanA.hpp"
 
-std::string Brain::identify(void) const
+const void HumanA::attack(void) const
 {
-    std::stringstream stream;
-
-	stream << std::showbase << std::hex;
-	stream << std::uppercase << (long)this;
-	std::string ret = stream.str();
-	ret[0] = '0';
-	ret[1] = 'x';
-	return (ret);
+    std::cout<<this->name<<" attack with his "<< this->w.getType() << std::endl;
 }
-
-Brain::Brain(void)
+HumanA::HumanA(void)
 {
 
 }
-Brain::~Brain(void)
+HumanA::HumanA(std::string const &name, const Weapon &w)
+{
+    this->name = name;
+    this->w = w;
+}
+HumanA::~HumanA(void)
 {
 
 }

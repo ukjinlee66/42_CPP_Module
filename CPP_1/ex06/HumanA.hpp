@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 17:29:53 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/07 17:29:54 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/08 23:53:13 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/08 23:53:14 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include <sstream>
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+#include <iostream>
+#include <string>
+#include "Weapon.hpp"
 
-std::string Brain::identify(void) const
+class HumanA
 {
-    std::stringstream stream;
+    private:
+        const Weapon &w;
+        std::string name;
+    public:
+        const void attack(void) const;
+        HumanA(void);
+        HumanA(std::string const &name, const Weapon &w);
+        ~HumanA(void);
+};
 
-	stream << std::showbase << std::hex;
-	stream << std::uppercase << (long)this;
-	std::string ret = stream.str();
-	ret[0] = '0';
-	ret[1] = 'x';
-	return (ret);
-}
-
-Brain::Brain(void)
-{
-
-}
-Brain::~Brain(void)
-{
-
-}
+#endif

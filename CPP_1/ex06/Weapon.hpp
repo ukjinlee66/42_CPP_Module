@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 17:29:53 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/07 17:29:54 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/08 23:52:51 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/08 23:52:52 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include <sstream>
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-std::string Brain::identify(void) const
+#include <iostream>
+#include <string>
+
+class Weapon
 {
-    std::stringstream stream;
+    private:
+        std::string type;
+    public:
+        Weapon(void);
+        Weapon(std::string type);
+        ~Weapon(void);
+        void setType(std::string type);
+        std::string const &getType(void) const;
 
-	stream << std::showbase << std::hex;
-	stream << std::uppercase << (long)this;
-	std::string ret = stream.str();
-	ret[0] = '0';
-	ret[1] = 'x';
-	return (ret);
-}
+};
 
-Brain::Brain(void)
-{
-
-}
-Brain::~Brain(void)
-{
-
-}
+#endif
