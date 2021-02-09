@@ -12,19 +12,19 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : name(name), wea()
 {
-    this->name = name;
+    
 }
 
-void HumanB::setWeapon(Weapon w)
+void HumanB::setWeapon(const Weapon &w)
 {
-    this->w = w;
+    this->wea = &w;
 }
 
 void HumanB::attack(void)
 {
-    std::cout<<this->name<<" attack with his "<<this->w.getType()<<std::endl;
+    std::cout<<this->name<<" attack with his "<<this->wea->getType()<<std::endl;
 }
 HumanB::HumanB(void)
 {

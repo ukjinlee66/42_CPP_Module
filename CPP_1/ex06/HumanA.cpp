@@ -12,20 +12,27 @@
 
 #include "HumanA.hpp"
 
-const void HumanA::attack(void) const
+void HumanA::attack(void) const
 {
-    std::cout<<this->name<<" attack with his "<< this->w.getType() << std::endl;
+    std::cout<<this->name<<" attack with his "<< this->wea.getType() << std::endl;
 }
-HumanA::HumanA(void)
+HumanA::HumanA(const HumanA& h) : name(h.name), wea(h.wea)
 {
 
 }
-HumanA::HumanA(std::string const &name, const Weapon &w)
+HumanA::HumanA(std::string name, Weapon& w) : name(name), wea(w)
 {
-    this->name = name;
-    this->w = w;
+
 }
 HumanA::~HumanA(void)
 {
 
+}
+HumanA& HumanA::operator=(HumanA& ref)
+{
+    if (&ref == this)
+        return (*this);
+    this->name = ref.name;
+    this->wea = ref.wea;
+    return (*this);
 }
