@@ -13,6 +13,7 @@
 - <https://blog.hexabrain.net/177> - operator overloading<br>
 - <https://blockdmask.tistory.com/322> - ofstream, ifstream<br>
 ## CPP Module 02 Reference<br>
+- <http://arkainoh.blogspot.com/2017/11/fixed-point.html> - Fixed point<br>
 ## CPP Module 03 Reference<br>
 ## CPP Module 04 Reference<br>
 ## CPP Module 05 Reference<br>
