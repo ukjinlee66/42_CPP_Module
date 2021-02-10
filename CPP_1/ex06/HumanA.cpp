@@ -14,7 +14,7 @@
 
 void HumanA::attack(void) const
 {
-    std::cout<<this->name<<" attack with his "<< this->wea.getType() << std::endl;
+    std::cout<<this->name<<" attacks with his "<< this->wea.getType() << std::endl;
 }
 HumanA::HumanA(const HumanA& h) : name(h.name), wea(h.wea)
 {

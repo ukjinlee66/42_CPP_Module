@@ -1,4 +1,4 @@
-abcdef
-b
-c
+a
+bcd
+cdef
 d

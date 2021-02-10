@@ -6,7 +6,7 @@
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 17:20:53 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/05 17:20:54 by youlee           ###   ########.fr       */
+/*   Updated: 2021/02/10 13:09:20 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
     delete (z1);
 
     event.set_type("event type");
-    z1 = event.newZombie("thrid zom");
+    z1 = event.newZombie("third zom");
     z1->announce();
     delete (z1);
 

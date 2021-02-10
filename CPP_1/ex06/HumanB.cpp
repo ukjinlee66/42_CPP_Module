@@ -24,7 +24,7 @@ void HumanB::setWeapon(const Weapon &w)
 
 void HumanB::attack(void)
 {
-    std::cout<<this->name<<" attack with his "<<this->wea->getType()<<std::endl;
+    std::cout<<this->name<<" attacks with his "<<this->wea->getType()<<std::endl;
 }
 HumanB::HumanB(void)
 {

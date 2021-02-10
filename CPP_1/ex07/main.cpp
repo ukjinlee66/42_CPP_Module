@@ -34,11 +34,6 @@ int main(int argc, char **argv)
         }
         std::string s1(argv[2]);
         std::string s2(argv[3]);
-        if (s1.length() < s2.length())
-        {
-            std::cout<<"second string length error!\n";
-            return (1);
-        }
         readFile.open(filename.c_str());
         if (readFile.is_open() == false)
         {
