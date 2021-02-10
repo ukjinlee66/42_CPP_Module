@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 
+class Fixed
+{
+private:
+    int point_value;
+    static const int fractional_bit = 8;
+public:
+    Fixed(void);
+    Fixed(const Fixed &a);
+    ~Fixed();
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
+    void operator=(const Fixed &f);
+};
