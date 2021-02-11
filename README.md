@@ -14,6 +14,7 @@
 - <https://blockdmask.tistory.com/322> - ofstream, ifstream<br>
 ## CPP Module 02 Reference<br>
 - <http://arkainoh.blogspot.com/2017/11/fixed-point.html> - Fixed point<br>
+- <https://isilme.tistory.com/14> - Fixed point2<br>
 ## CPP Module 03 Reference<br>
 ## CPP Module 04 Reference<br>
 ## CPP Module 05 Reference<br>
