@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
 #include <iostream>
 #include <cmath>
 
@@ -21,6 +24,8 @@ private:
 public:
     Fixed(void);
     Fixed(const Fixed &a);
+    Fixed(const int num);
+    Fixed(const float f);
     ~Fixed();
     int getRawBits( void ) const;
     void setRawBits( int const raw );
@@ -28,3 +33,7 @@ public:
     float toFloat( void ) const;
     int toInt( void ) const;
 };
+
+std::ostream &operator<<(std::ostream& os, Fixed const &f);
+
+#endif
