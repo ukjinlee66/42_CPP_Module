@@ -16,29 +16,11 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-class FragTrap
+#include "ClapTrap.hpp"
+class FragTrap : public ClapTrap
 {
 private:
-	int			Hit_points;
-	int			Max_Hit_points;
-	int			Energy_points;
-	int			Max_energy_potins;
-	int			Level;
-	std::string name;
-	int			Melee_attack_damage;
-	int			Ranged_attack_damage;
-	int			Long_distance_attack_damage;
-	int			Magic_attack;
-	int			Chemical_attack;
-	int			Armor_damage_reduction;
 public:
-	void		rangedAttack(std::string const& target);
-	void		meleeAttack(std::string const& target);
-	void		LongAttack(std::string const& target);
-	void		MagicAttack(std::string const& target);
-	void		ChemicalAttack(std::string const& target);
-	bool		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
 	void		vaulthunter_dot_exe(std::string const& target);
 	FragTrap(void);
 	FragTrap(std::string name);

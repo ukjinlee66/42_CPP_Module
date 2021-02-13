@@ -14,16 +14,17 @@
 
 int main(void)
 {
+	srand(time(0));
 	FragTrap f("first Trap");
 	f.vaulthunter_dot_exe("target1");
 	f.meleeAttack("target2");
 	f.rangedAttack("target3");
-	f.takeDamage("20");
-	f.beRepaired("10");
-	f.takeDamage("40");
-	f.takeDamage("40");
-	f.takeDamage("40");
-	f.beRepaired("200");
+	f.takeDamage(20);
+	f.beRepaired(10);
+	f.takeDamage(40);
+	f.takeDamage(40);
+	f.takeDamage(40);
+	f.beRepaired(200);
 	f.vaulthunter_dot_exe("ramdom target1");
 	f.vaulthunter_dot_exe("ramdom target2");
 	f.vaulthunter_dot_exe("ramdom target3");

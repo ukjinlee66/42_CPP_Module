@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <cstdlib>
 class FragTrap
 {
 private:
@@ -43,5 +43,3 @@ public:
 	FragTrap &operator=(FragTrap const &f);
 	~FragTrap(void);
 };
-
-std::string attack_pool[5] = {"Melee", "Ranged", "Long", "Magic", "Chemical"};

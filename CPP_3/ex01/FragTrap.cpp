@@ -70,7 +70,7 @@ void		FragTrap::beRepaired(unsigned int amount)
 {
 	int rep;
 
-	if (this->Hit_points + amount < this->Max_Hit_points)
+	if ((int)(this->Hit_points + amount) < this->Max_Hit_points)
 	{	
 		this->Hit_points += amount;
 		rep = amount;
@@ -142,6 +142,7 @@ FragTrap &FragTrap::operator=(FragTrap const &f)
 	this->name = f.name;
 	this->Level = f.Level;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
+	return (*this);
 }
 FragTrap::~FragTrap(void)
 {
@@ -158,7 +159,8 @@ void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 	dam[2] = this->Long_distance_attack_damage;
 	dam[3] = this->Magic_attack;
 	dam[4] = this->Chemical_attack;
-
+	//name pool
+	std::string attack_pool[5] = {"Melee", "Ranged", "Long", "Magic", "Chemical"};
 	if (this->Energy_points < 25)
 	{
 		std::cout<<"There is not enough energy."<<std::endl;
@@ -167,7 +169,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 	this->Energy_points -= 25;
 	srand(time(0));
 	ch = rand() % 5; // 0~4;
-	this->name << " attacks " <<
+	std::cout<<this->name << " attacks " <<
 		target << " at " << attack_pool[ch] << ", causing " <<
 		dam[ch] << " points of damage!" << std::endl;
 }
