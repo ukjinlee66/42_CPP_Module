@@ -24,7 +24,7 @@ void		FragTrap::meleeAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP " <<
 	this->name << " attacks " <<
-	target << " at range, causing " <<
+	target << " at melee, causing " <<
 	this->Melee_attack_damage << " points of damage!" << std::endl;
 }
 
@@ -32,16 +32,16 @@ void		FragTrap::LongAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP " <<
 	this->name << " attacks " <<
-	target << " at range, causing " <<
-	this->Melee_attack_damage << " points of damage!" << std::endl;
+	target << " at Long, causing " <<
+	this->Long_distance_attack_damage << " points of damage!" << std::endl;
 }
 
 void		FragTrap::MagicAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP " <<
 	this->name << " attacks " <<
-	target << " at range, causing " <<
-	this->Melee_attack_damage << " points of damage!" << std::endl;
+	target << " at Magic, causing " <<
+	this->Magic_attack << " points of damage!" << std::endl;
 
 }
 
@@ -49,8 +49,8 @@ void		FragTrap::ChemicalAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP " <<
 	this->name << " attacks " <<
-	target << " at range, causing " <<
-	this->Melee_attack_damage << " points of damage!" << std::endl;
+	target << " at Chemical, causing " <<
+	this->Chemical_attack << " points of damage!" << std::endl;
 }
 
 bool		FragTrap::takeDamage(unsigned int amount)
@@ -149,6 +149,16 @@ FragTrap::~FragTrap(void)
 }
 void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 {
+	int ch;
+	int dam[5];
+
+	//damage pool
+	dam[0] = this->Melee_attack_damage;
+	dam[1] = this->Ranged_attack_damage;
+	dam[2] = this->Long_distance_attack_damage;
+	dam[3] = this->Magic_attack;
+	dam[4] = this->Chemical_attack;
+
 	if (this->Energy_points < 25)
 	{
 		std::cout<<"There is not enough energy."<<std::endl;
@@ -156,5 +166,8 @@ void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 	}
 	this->Energy_points -= 25;
 	srand(time(0));
-	
+	ch = rand() % 5; // 0~4;
+	this->name << " attacks " <<
+		target << " at " << attack_pool[ch] << ", causing " <<
+		dam[ch] << " points of damage!" << std::endl;
 }
