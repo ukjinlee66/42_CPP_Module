@@ -16,6 +16,7 @@
 - <http://arkainoh.blogspot.com/2017/11/fixed-point.html> - Fixed point<br>
 - <https://isilme.tistory.com/14> - Fixed point2<br>
 ## CPP Module 03 Reference<br>
+- <https://blog.hexabrain.net/173> - inheritance<br>
 ## CPP Module 04 Reference<br>
 ## CPP Module 05 Reference<br>
 ## CPP Module 06 Reference<br>
