@@ -15,18 +15,44 @@
 void		FragTrap::rangedAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP "<<
-		this->name<<" attacks "<<
-		target<<" at range, causing "<<
-		this->Ranged_attack_damage<<" points of damage!" << std::endl;
+	this->name<<" attacks "<<
+	target<<" at range, causing "<<
+	this->Ranged_attack_damage<<" points of damage!" << std::endl;
 
 }
 void		FragTrap::meleeAttack(std::string const& target)
 {
 	std::cout << "FR4G-TP " <<
-		this->name << " attacks " <<
-		target << " at range, causing " <<
-		this->Melee_attack_damage << " points of damage!" << std::endl;
+	this->name << " attacks " <<
+	target << " at range, causing " <<
+	this->Melee_attack_damage << " points of damage!" << std::endl;
 }
+
+void		FragTrap::LongAttack(std::string const& target)
+{
+	std::cout << "FR4G-TP " <<
+	this->name << " attacks " <<
+	target << " at range, causing " <<
+	this->Melee_attack_damage << " points of damage!" << std::endl;
+}
+
+void		FragTrap::MagicAttack(std::string const& target)
+{
+	std::cout << "FR4G-TP " <<
+	this->name << " attacks " <<
+	target << " at range, causing " <<
+	this->Melee_attack_damage << " points of damage!" << std::endl;
+
+}
+
+void		FragTrap::ChemicalAttack(std::string const& target)
+{
+	std::cout << "FR4G-TP " <<
+	this->name << " attacks " <<
+	target << " at range, causing " <<
+	this->Melee_attack_damage << " points of damage!" << std::endl;
+}
+
 bool		FragTrap::takeDamage(unsigned int amount)
 {
 	int damage = amount - this->Armor_damage_reduction;
@@ -42,8 +68,20 @@ bool		FragTrap::takeDamage(unsigned int amount)
 }
 void		FragTrap::beRepaired(unsigned int amount)
 {
-	std::cout<<"beRepaired! "<<amount<< "The remaining points " <<
-		this->Energy_points << std::endl;
+	int rep;
+
+	if (this->Hit_points + amount < this->Max_Hit_points)
+	{	
+		this->Hit_points += amount;
+		rep = amount;
+	}
+	else
+	{
+		rep = this->Hit_points + amount - this->Max_Hit_points;
+		this->Hit_points = this->Max_Hit_points;
+	}
+	std::cout<<"beRepaired! "<< rep << "The remaining points " <<
+		this->Hit_points << std::endl;
 }
 FragTrap::FragTrap(void)
 {
@@ -56,6 +94,9 @@ FragTrap::FragTrap(void)
 	this->name = "Default";
 	this->Melee_attack_damage = 30;
 	this->Ranged_attack_damage = 20;
+	this->Long_distance_attack_damage = 10;
+	this->Magic_attack = 35;
+	this->Chemical_attack = 15;
 	this->Armor_damage_reduction = 5;
 }
 FragTrap::FragTrap(std::string name)
@@ -69,7 +110,38 @@ FragTrap::FragTrap(std::string name)
 	this->name = name;
 	this->Melee_attack_damage = 30;
 	this->Ranged_attack_damage = 20;
+	this->Long_distance_attack_damage = 10;
+	this->Magic_attack = 35;
+	this->Chemical_attack = 15;
 	this->Armor_damage_reduction = 5;
+}
+FragTrap::FragTrap(FragTrap const &f)
+{
+	std::cout<<"Call Copy constructor!\n";
+	this->Hit_points = f.Hit_points;
+	this->Max_Hit_points = f.Max_Hit_points;
+	this->Melee_attack_damage = f.Melee_attack_damage;
+	this->Ranged_attack_damage = f.Ranged_attack_damage;
+	this->Long_distance_attack_damage = f.Long_distance_attack_damage;
+	this->Magic_attack = f.Magic_attack;
+	this->Chemical_attack = f.Chemical_attack;
+	this->name = f.name;
+	this->Level = f.Level;
+	this->Armor_damage_reduction = f.Armor_damage_reduction;
+}
+FragTrap &FragTrap::operator=(FragTrap const &f)
+{
+	std::cout<<"Call Assign Operator!\n";
+	this->Hit_points = f.Hit_points;
+	this->Max_Hit_points = f.Max_Hit_points;
+	this->Melee_attack_damage = f.Melee_attack_damage;
+	this->Ranged_attack_damage = f.Ranged_attack_damage;
+	this->Long_distance_attack_damage = f.Long_distance_attack_damage;
+	this->Magic_attack = f.Magic_attack;
+	this->Chemical_attack = f.Chemical_attack;
+	this->name = f.name;
+	this->Level = f.Level;
+	this->Armor_damage_reduction = f.Armor_damage_reduction;
 }
 FragTrap::~FragTrap(void)
 {
@@ -77,6 +149,12 @@ FragTrap::~FragTrap(void)
 }
 void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 {
+	if (this->Energy_points < 25)
+	{
+		std::cout<<"There is not enough energy."<<std::endl;
+		return ;
+	}
+	this->Energy_points -= 25;
 	srand(time(0));
-
+	
 }
