@@ -21,12 +21,12 @@
 #include <string>
 #include <cstdlib>
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 protected:
 	std::string name;
-public:
 	NinjaTrap(void);
+public:
 	NinjaTrap(std::string name);
 	NinjaTrap(NinjaTrap const &f);
 	NinjaTrap &operator=(NinjaTrap const &f);

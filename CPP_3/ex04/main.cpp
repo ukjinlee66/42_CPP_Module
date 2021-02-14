@@ -12,42 +12,22 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void)
 {
 	srand(time(0));
 
-	std::cout<< " <<< FragTrap >>> \n\n";
+	std::cout<< " <<< SuperTrap >>> \n\n";
 
-	FragTrap f("first Frag");
-	f.vaulthunter_dot_exe("random target");
-	f.meleeAttack("target2");
-	f.rangedAttack("target3");
-	f.takeDamage(20);
-	f.beRepaired(10);
-	f.takeDamage(40);
-	f.takeDamage(40);
-	f.takeDamage(40);
-	f.beRepaired(200);
-	f.vaulthunter_dot_exe("ramdom target1");
-	f.vaulthunter_dot_exe("ramdom target2");
-	f.vaulthunter_dot_exe("ramdom target3");
-	f.vaulthunter_dot_exe("ramdom target4");
-	f.vaulthunter_dot_exe("ramdom target5");
-
-	std::cout<< " <<< ScavTrap >>> \n\n";
-
-	ScavTrap s("first Scav");
-	s.challengeNewcomer();
-	s.meleeAttack("tar1");
-	s.rangedAttack("tar2");
-	s.takeDamage(30);
-	s.takeDamage(20);
-	s.beRepaired(50);
-	s.takeDamage(150);
-	s.beRepaired(200);
-	s.challengeNewcomer();
-	s.challengeNewcomer();
-	s.challengeNewcomer();
+	SuperTrap s("first super");
+	NinjaTrap n("first nin");
+	FragTrap f("first frag");
+	s.meleeAttack("Super target");
+	s.rangedAttack("Super target2");
+	s.ninjaShoebox(n);
+	s.ninjaShoebox(f);
+	s.vaulthunter_dot_exe("random target");
 	return (0);
 }

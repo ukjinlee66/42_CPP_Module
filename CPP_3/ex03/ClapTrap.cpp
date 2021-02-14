@@ -36,7 +36,7 @@ bool		ClapTrap::takeDamage(unsigned int amount)
 		damage += this->Hit_points;
 		this->Hit_points = 0;
 	}
-	std::cout << "Take Damage! " << amount << "The remaining points " <<
+	std::cout << "Take Damage! " << amount << " The remaining points " <<
 		this->Hit_points << std::endl;
 	return (this->Hit_points == 0);
 }
@@ -52,9 +52,10 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	else
 	{
 		rep = this->Hit_points + amount - this->Max_Hit_points;
+		rep = amount - rep;
 		this->Hit_points = this->Max_Hit_points;
 	}
-	std::cout<<"beRepaired! "<< rep << "The remaining points " <<
+	std::cout<<"beRepaired! "<< rep << " The remaining points " <<
 		this->Hit_points << std::endl;
 }
 ClapTrap::ClapTrap(void)
@@ -70,7 +71,50 @@ ClapTrap::ClapTrap(void)
 	this->Ranged_attack_damage = 15;
 	this->Armor_damage_reduction = 3;
 }
+ClapTrap::ClapTrap(std::string name)
+{
+	std::cout << "String ClapTrap Constructor called\n";
+	this->Hit_points = 100;
+	this->Max_energy_potins = 100;
+	this->Max_Hit_points = 50;
+	this->Energy_points = 50;
+	this->Level = 1;
+	this->name = name;
+	this->Melee_attack_damage = 20;
+	this->Ranged_attack_damage = 15;
+	this->Armor_damage_reduction = 3;
+}
+ClapTrap::ClapTrap(ClapTrap const &f)
+{
+	std::cout << "ClapTrap Copy Constructor called\n";
+	this->Hit_points = f.Hit_points;
+	this->Max_energy_potins = f.Max_energy_potins;
+	this->Max_Hit_points = f.Max_Hit_points;
+	this->Energy_points = f.Energy_points;
+	this->Level = f.Level;
+	this->name = f.name;
+	this->Melee_attack_damage = f.Melee_attack_damage;
+	this->Ranged_attack_damage = f.Ranged_attack_damage;
+	this->Armor_damage_reduction = f.Armor_damage_reduction;
+	return (*this);
+}
 ClapTrap::~ClapTrap(void)
 {
     std::cout << "Default ClapTrap Destructor called\n";
+}
+std::string	ClapTrap::get_name(void)
+{
+	return (this->name);
+}
+ClapTrap &ClapTrap::operator=(ClapTrap const &f)
+{
+	this->Hit_points = f.Hit_points;
+	this->Max_energy_potins = f.Max_energy_potins;
+	this->Max_Hit_points = f.Max_Hit_points;
+	this->Energy_points = f.Energy_points;
+	this->Level = f.Level;
+	this->name = f.name;
+	this->Melee_attack_damage = f.Melee_attack_damage;
+	this->Ranged_attack_damage = f.Ranged_attack_damage;
+	this->Armor_damage_reduction = f.Armor_damage_reduction;
 }

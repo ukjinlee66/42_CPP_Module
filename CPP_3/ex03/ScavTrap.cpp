@@ -51,7 +51,7 @@ ScavTrap::ScavTrap(ScavTrap const &f)
 }
 ScavTrap &ScavTrap::operator=(ScavTrap const &f)
 {
-	std::cout<<"Call Assign Operator!\n";
+	std::cout<<"Call ScavTrap Assign Operator!\n";
 	this->Hit_points = f.Hit_points;
 	this->Max_Hit_points = f.Max_Hit_points;
 	this->Melee_attack_damage = f.Melee_attack_damage;

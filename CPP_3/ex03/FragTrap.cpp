@@ -23,9 +23,6 @@ FragTrap::FragTrap(void)
 	this->name = "Default";
 	this->Melee_attack_damage = 30;
 	this->Ranged_attack_damage = 20;
-	this->Long_distance_attack_damage = 10;
-	this->Magic_attack = 35;
-	this->Chemical_attack = 15;
 	this->Armor_damage_reduction = 5;
 }
 FragTrap::FragTrap(std::string name)
@@ -39,9 +36,6 @@ FragTrap::FragTrap(std::string name)
 	this->name = name;
 	this->Melee_attack_damage = 30;
 	this->Ranged_attack_damage = 20;
-	this->Long_distance_attack_damage = 10;
-	this->Magic_attack = 35;
-	this->Chemical_attack = 15;
 	this->Armor_damage_reduction = 5;
 }
 FragTrap::FragTrap(FragTrap const &f)
@@ -51,9 +45,6 @@ FragTrap::FragTrap(FragTrap const &f)
 	this->Max_Hit_points = f.Max_Hit_points;
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
-	this->Long_distance_attack_damage = f.Long_distance_attack_damage;
-	this->Magic_attack = f.Magic_attack;
-	this->Chemical_attack = f.Chemical_attack;
 	this->name = f.name;
 	this->Level = f.Level;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
@@ -65,9 +56,6 @@ FragTrap &FragTrap::operator=(FragTrap const &f)
 	this->Max_Hit_points = f.Max_Hit_points;
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
-	this->Long_distance_attack_damage = f.Long_distance_attack_damage;
-	this->Magic_attack = f.Magic_attack;
-	this->Chemical_attack = f.Chemical_attack;
 	this->name = f.name;
 	this->Level = f.Level;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
@@ -85,20 +73,19 @@ void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 	//damage pool
 	dam[0] = this->Melee_attack_damage;
 	dam[1] = this->Ranged_attack_damage;
-	dam[2] = this->Long_distance_attack_damage;
-	dam[3] = this->Magic_attack;
-	dam[4] = this->Chemical_attack;
+	dam[2] = this->Ranged_attack_damage;
+	dam[3] = this->Melee_attack_damage;
+	dam[4] = this->Ranged_attack_damage;
 	//name pool
-	std::string attack_pool[5] = {"Melee", "Ranged", "Long", "Magic", "Chemical"};
+	std::string attack_pool[5] = {"Melee", "Ranged", "Ranged", "Melee", "Ranged"};
 	if (this->Energy_points < 25)
 	{
 		std::cout<<"There is not enough energy."<<std::endl;
 		return ;
 	}
 	this->Energy_points -= 25;
-	srand(time(0));
 	ch = rand() % 5; // 0~4;
 	std::cout<<this->name << " attacks " <<
 		target << " at " << attack_pool[ch] << ", causing " <<
-		dam[ch] << " points of damage!" << std::endl;
+		dam[ch] << " points of damage!" << " The remaining energy is " << this->Energy_points << std::endl;
 }

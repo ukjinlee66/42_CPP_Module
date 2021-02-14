@@ -41,13 +41,4 @@ public:
 	~ClapTrap(void);
 };
 
-
-
-
-
-
-
-
-
-
 #endif

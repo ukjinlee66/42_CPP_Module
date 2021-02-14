@@ -62,7 +62,7 @@ bool		FragTrap::takeDamage(unsigned int amount)
 		damage += this->Hit_points;
 		this->Hit_points = 0;
 	}
-	std::cout << "Take Damage! " << amount << "The remaining points " <<
+	std::cout << "Take Damage! " << amount << " The remaining points " <<
 		this->Hit_points << std::endl;
 	return (this->Hit_points == 0);
 }
@@ -78,9 +78,10 @@ void		FragTrap::beRepaired(unsigned int amount)
 	else
 	{
 		rep = this->Hit_points + amount - this->Max_Hit_points;
+		rep = amount - rep;
 		this->Hit_points = this->Max_Hit_points;
 	}
-	std::cout<<"beRepaired! "<< rep << "The remaining points " <<
+	std::cout<<"beRepaired! "<< rep << " The remaining points " <<
 		this->Hit_points << std::endl;
 }
 FragTrap::FragTrap(void)
@@ -167,9 +168,9 @@ void		FragTrap::vaulthunter_dot_exe(std::string const& target)
 		return ;
 	}
 	this->Energy_points -= 25;
-	srand(time(0));
+	
 	ch = rand() % 5; // 0~4;
 	std::cout<<this->name << " attacks " <<
 		target << " at " << attack_pool[ch] << ", causing " <<
-		dam[ch] << " points of damage!" << std::endl;
+		dam[ch] << " points of damage!" << " The remaining energy is " << this->Energy_points << std::endl;
 }

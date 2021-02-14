@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 23:42:28 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/13 23:42:37 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/14 00:00:04 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/14 00:00:10 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-void		ScavTrap::rangedAttack(std::string const& target)
+void		ClapTrap::rangedAttack(std::string const& target)
 {
-	std::cout << "<ScavTrap>FR4G-TP "<<
+	std::cout << "FR4G-TP "<<
 	this->name<<" attacks "<<
 	target<<" at range, causing "<<
 	this->Ranged_attack_damage<<" points of damage!" << std::endl;
 
 }
-void		ScavTrap::meleeAttack(std::string const& target)
+void		ClapTrap::meleeAttack(std::string const& target)
 {
-	std::cout << "<ScavTrap>FR4G-TP " <<
+	std::cout << "FR4G-TP " <<
 	this->name << " attacks " <<
 	target << " at melee, causing " <<
 	this->Melee_attack_damage << " points of damage!" << std::endl;
 }
-
-bool		ScavTrap::takeDamage(unsigned int amount)
+bool		ClapTrap::takeDamage(unsigned int amount)
 {
 	int damage = amount - this->Armor_damage_reduction;
 	this->Hit_points -= damage;
@@ -37,11 +36,11 @@ bool		ScavTrap::takeDamage(unsigned int amount)
 		damage += this->Hit_points;
 		this->Hit_points = 0;
 	}
-	std::cout << "<ScavTrap>Take Damage! " << amount << " The remaining points " <<
+	std::cout << "Take Damage! " << amount << " The remaining points " <<
 		this->Hit_points << std::endl;
 	return (this->Hit_points == 0);
 }
-void		ScavTrap::beRepaired(unsigned int amount)
+void		ClapTrap::beRepaired(unsigned int amount)
 {
 	int rep;
 
@@ -56,64 +55,66 @@ void		ScavTrap::beRepaired(unsigned int amount)
 		rep = amount - rep;
 		this->Hit_points = this->Max_Hit_points;
 	}
-	std::cout<<"<ScavTrap>beRepaired! "<< rep << " The remaining points " <<
+	std::cout<<"beRepaired! "<< rep << " The remaining points " <<
 		this->Hit_points << std::endl;
 }
-ScavTrap::ScavTrap(void)
+ClapTrap::ClapTrap(void)
 {
-	std::cout << "Default ScavTrap Constructor called\n";
+	std::cout << "Default ClapTrap Constructor called\n";
 	this->Hit_points = 100;
 	this->Max_energy_potins = 100;
 	this->Max_Hit_points = 50;
 	this->Energy_points = 50;
 	this->Level = 1;
-	this->name = "Default ScavTrap";
+	this->name = "Default ClapTrap";
 	this->Melee_attack_damage = 20;
 	this->Ranged_attack_damage = 15;
 	this->Armor_damage_reduction = 3;
 }
-ScavTrap::ScavTrap(std::string name)
+ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "String ScavTrap Constructor called\n";
+	std::cout << "String ClapTrap Constructor called\n";
 	this->Hit_points = 100;
 	this->Max_energy_potins = 100;
-	this->Max_Hit_points = 100;
-	this->Energy_points = 100;
+	this->Max_Hit_points = 50;
+	this->Energy_points = 50;
 	this->Level = 1;
 	this->name = name;
 	this->Melee_attack_damage = 20;
 	this->Ranged_attack_damage = 15;
 	this->Armor_damage_reduction = 3;
 }
-ScavTrap::ScavTrap(ScavTrap const &f)
+ClapTrap::ClapTrap(ClapTrap const &f)
 {
-	std::cout<<"Call ScavTrap Copy constructor!\n";
+	std::cout << "ClapTrap Copy Constructor called\n";
 	this->Hit_points = f.Hit_points;
+	this->Max_energy_potins = f.Max_energy_potins;
 	this->Max_Hit_points = f.Max_Hit_points;
+	this->Energy_points = f.Energy_points;
+	this->Level = f.Level;
+	this->name = f.name;
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
-	this->name = f.name;
-	this->Level = f.Level;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
 }
-ScavTrap &ScavTrap::operator=(ScavTrap const &f)
+ClapTrap::~ClapTrap(void)
 {
-	std::cout<<"Call ScavTrap Assign Operator!\n";
+    std::cout << "Default ClapTrap Destructor called\n";
+}
+std::string	ClapTrap::get_name(void)
+{
+	return (this->name);
+}
+ClapTrap &ClapTrap::operator=(ClapTrap const &f)
+{
 	this->Hit_points = f.Hit_points;
+	this->Max_energy_potins = f.Max_energy_potins;
 	this->Max_Hit_points = f.Max_Hit_points;
+	this->Energy_points = f.Energy_points;
+	this->Level = f.Level;
+	this->name = f.name;
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
-	this->name = f.name;
-	this->Level = f.Level;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
 	return (*this);
-}
-ScavTrap::~ScavTrap(void)
-{
-	std::cout << "Default ScavTrap Destructor called\n";
-}
-void ScavTrap::challengeNewcomer(void)
-{
-    std::string challenge_pool[3] = {"Soba", "Ramen", "rice noodles"};
-    std::cout<< this->name << " lunch menu is "<< challenge_pool[rand() % 3] << std::endl;
 }
