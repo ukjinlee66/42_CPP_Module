@@ -38,8 +38,12 @@ std::string Sorcerer::get_title(void) const
 {
     return (this->title);
 }
-std::ostream &Sorcerer::operator<<(std::ostream &os, Sorcerer &so)
+std::ostream &operator<<(std::ostream &os, Sorcerer &so)
 {
     os << "I am "<<so.get_name()<<", "<<so.get_title()<<", and I like ponies!"<<std::endl;
     return (os);
+}
+void Sorcerer::polymorph(Victim const &vi) const
+{
+    vi.getPolymorphed();
 }

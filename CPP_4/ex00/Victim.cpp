@@ -12,6 +12,17 @@
 
 #include "Victim.hpp"
 
+
+Victim::Victim(void)
+{
+    this->set_name("default Victim");
+}
+Victim::Victim(Victim const &vi)
+{
+    this->set_name(vi.get_name());
+    std::cout<<"Some random victim called "<<this->get_name()<<" just appeared!"<<std::endl;
+}
+
 Victim::Victim(std::string const name)
 {
     this->set_name(name);
@@ -21,19 +32,19 @@ Victim::~Victim(void)
 {
     std::cout<<"Victim "<<this->get_name()<<" just died for no apparent reason!"<<std::endl;
 }
-void Sorcerer::set_name(std::string const name)
+void Victim::set_name(std::string const name)
 {
     this->name = name;
 }
-std::string Sorcerer::get_name(void) const
+std::string Victim::get_name(void) const
 {
     return (this->name);
 }
-void Victim::getPolymorphed() const
+void Victim::getPolymorphed(void) const
 {
     std::cout<<this->get_name()<<" has been turned into a cute little sheep!"<<std::endl;
 }
-std::ostream &Victim::operator<<(std::ostream &os, Victim &vi)
+std::ostream &operator<<(std::ostream &os, Victim &vi)
 {
     os << "I'm "<<vi.get_name()<<" and I like otters!"<<std::endl;
     return (os);

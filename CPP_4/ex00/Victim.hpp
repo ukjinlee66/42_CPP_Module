@@ -21,11 +21,13 @@ class Victim
     protected:
         std::string name;
     public:
+        Victim(void);
+        Victim(Victim const &vi);
         Victim(std::string const name);
-        ~Victim(void);
+        virtual ~Victim(void);
         void set_name(std::string const name);
         std::string get_name(void) const;
-        void getPolymorphed() const;
+        virtual void getPolymorphed() const;
         void polymorph(Victim const &) const;
 };
 std::ostream &operator<<(std::ostream &os, Victim &vi);

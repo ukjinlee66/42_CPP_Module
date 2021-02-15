@@ -15,12 +15,20 @@
 
 #include <iostream>
 #include <string>
+#include "Victim.hpp"
 
-class Peon
+class Peon : public Victim
 {
     protected:
+        std::string name;
     public:
-    
+        void set_name(std::string const name);
+        std::string get_name(void) const;
+        Peon(void);
+        Peon(Peon const &co);
+        Peon(std::string name);
+        virtual ~Peon(void);
+        void getPolymorphed() const;
 };
 
 #endif

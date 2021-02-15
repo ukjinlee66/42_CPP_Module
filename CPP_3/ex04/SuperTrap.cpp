@@ -38,6 +38,7 @@ SuperTrap::SuperTrap(std::string name)
 	this->Melee_attack_damage = this->NinjaTrap::Melee_attack_damage;
 	this->Ranged_attack_damage = this->FragTrap::Ranged_attack_damage;
 	this->Armor_damage_reduction = this->FragTrap::Armor_damage_reduction;
+	std::cout<<"armor : "<< this->Armor_damage_reduction<<std::endl;
 }
 SuperTrap::SuperTrap(SuperTrap const &f)
 {
@@ -58,11 +59,11 @@ SuperTrap::~SuperTrap(void)
 }
 void		SuperTrap::rangedAttack(std::string const& target)
 {
-    this->FragTrap::rangedAttack(target);
+    FragTrap::rangedAttack(target);
 }
 void		SuperTrap::meleeAttack(std::string const& target)
 {
-    this->NinjaTrap::meleeAttack(target);
+    NinjaTrap::meleeAttack(target);
 }
 SuperTrap &SuperTrap::operator=(SuperTrap const &f)
 {

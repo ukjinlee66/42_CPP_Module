@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -26,10 +27,10 @@ class Sorcerer
     std::string get_name(void) const;
     void set_title(std::string const title);
     std::string get_title(void) const;
-    void polymorph(Victim const &) const;
+    void polymorph(Victim const &vi) const;
     Sorcerer(void);
     Sorcerer(std::string const name, std::string const title);
-    ~Sorcerer(void);
+    virtual ~Sorcerer(void);
 };
 std::ostream &operator<<(std::ostream &os, Sorcerer &so);
 #endif

@@ -18,7 +18,7 @@
 #include <string>
 #include <cstdlib>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
 public:
