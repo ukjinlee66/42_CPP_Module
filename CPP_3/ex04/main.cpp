@@ -24,8 +24,9 @@ int main(void)
 	SuperTrap s("first super");
 	NinjaTrap n("first nin");
 	FragTrap f("first frag");
-	s.meleeAttack("Super target");
 	s.rangedAttack("Super target2");
+	s.meleeAttack("Super target");
+	
 	s.ninjaShoebox(n);
 	s.ninjaShoebox(f);
 	s.vaulthunter_dot_exe("random target");

@@ -17,9 +17,10 @@
 #include <string>
 #include <cstdlib>
 #include "ClapTrap.hpp"
+
 class FragTrap : public ClapTrap
 {
-private:
+protected:
 public:
 	void		vaulthunter_dot_exe(std::string const& target);
 	FragTrap(void);

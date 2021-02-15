@@ -10,4 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PEON_HPP
+#define PEON_HPP
 
+#include <iostream>
+#include <string>
+
+class Peon
+{
+    protected:
+    public:
+    
+};
+
+#endif

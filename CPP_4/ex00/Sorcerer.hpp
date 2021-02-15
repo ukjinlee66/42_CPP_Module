@@ -26,6 +26,7 @@ class Sorcerer
     std::string get_name(void) const;
     void set_title(std::string const title);
     std::string get_title(void) const;
+    void polymorph(Victim const &) const;
     Sorcerer(void);
     Sorcerer(std::string const name, std::string const title);
     ~Sorcerer(void);

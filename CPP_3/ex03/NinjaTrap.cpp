@@ -88,7 +88,7 @@ void NinjaTrap::ninjaShoebox(ClapTrap &tr)
 	}
 	this->Energy_points -= 15;
     std::cout << "NinjaShoeBox! parameter ClapTrap!" << tr.get_name() <<std::endl;
-    std::cout << "There is no special function of ClapTrap!" << std::endl;
+    std::cout << "There is no special function of ClapTrap! Don't know that?" << std::endl;
     std::cout << "Ninja Trap " << this->name << " The remaining energy is " << this->Energy_points << std::endl;
 }
 void NinjaTrap::ninjaShoebox(NinjaTrap &tr)
@@ -100,7 +100,7 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &tr)
 	}
 	this->Energy_points -= 15;
     std::cout << "NinjaShoeBox! parameter NinjaTrap!" << tr.getname() <<std::endl;
-    std::cout << "ShoeBox is already running!" << std::endl;
+    std::cout << "ShoeBox is already running! idiot" << std::endl;
     std::cout << "Ninja Trap " << this->name << " The remaining energy is " << this->Energy_points << std::endl;
 }
 void NinjaTrap::ninjaShoebox(ScavTrap &tr)

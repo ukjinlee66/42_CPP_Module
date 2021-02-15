@@ -96,7 +96,6 @@ ClapTrap::ClapTrap(ClapTrap const &f)
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
-	return (*this);
 }
 ClapTrap::~ClapTrap(void)
 {
@@ -113,4 +112,5 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &f)
 	this->Melee_attack_damage = f.Melee_attack_damage;
 	this->Ranged_attack_damage = f.Ranged_attack_damage;
 	this->Armor_damage_reduction = f.Armor_damage_reduction;
+	return (*this);
 }
