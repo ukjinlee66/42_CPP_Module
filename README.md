@@ -19,7 +19,8 @@
 - <https://blog.hexabrain.net/173> - inheritance<br>
 - <https://codingcoding.tistory.com/517> - Diamond inheritance Problem<br>
 ## CPP Module 04 Reference<br>
-- <https://pacs.tistory.com/entry/C-상속과-다형성-Inheritance-Polymorphism> - inheritance, polymorphism
+- <https://pacs.tistory.com/entry/C-상속과-다형성-Inheritance-Polymorphism> - inheritance, polymorphism<br>
+- <https://makefortune2.tistory.com/224> - upcasting<br>
 ## CPP Module 05 Reference<br>
 ## CPP Module 06 Reference<br>
 ## CPP Module 07 Reference<br>
