@@ -47,3 +47,9 @@ void Sorcerer::polymorph(Victim const &vi) const
 {
     vi.getPolymorphed();
 }
+Sorcerer &Sorcerer::operator=(const Sorcerer &So)
+{
+    this->set_name(So.get_name());
+    this->set_title(So.get_title());
+    return (*this);
+}

@@ -5,24 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 18:30:15 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/14 18:30:19 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/16 22:47:00 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/16 22:47:01 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Peon.hpp"
-#include "Victim.hpp"
+#include "AWeapon.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
+#include "RadScorpion.hpp"
+#include "SuperMutant.hpp"
 
-int main(void)
+int main()
 {
-    Sorcerer robert("Robert", "the Magnificent");
+    Character* me = new Character("me");
 
-    Victim jim("Jimmy");
-    Peon joe("Joe");
+    std::cout << *me;
+
+    Enemy* b = new RadScorpion();
+    AWeapon* pr = new PlasmaRifle();
+    Aweapon* pf = new PowerFist();
+
+    me->equip(pr);
+    std::cout << *me;
+    me->equip(pf);
     
-    std::cout << robert << jim << joe;
-    robert.polymorph(jim);
-    robert.polymorph(joe);
+    me->attaack(b);
+    std::cout << *me;
+    me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+
     return (0);
 }

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 18:30:00 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/14 18:30:01 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/16 22:45:09 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/16 22:45:11 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
-
+#ifndef AWEAPON_HPP
+#define AWEAPON_HPP
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
 
-class Peon : public Victim
+class AWeapon
 {
     private:
         std::string name;
-        Peon(void);
+        int         damage_point;
+        int         action_point;
+        AWeapon(void);
     public:
-        void set_name(std::string const name);
-        std::string get_name(void) const;
-        Peon(Peon const &co);
-        Peon(std::string name);
-        virtual ~Peon(void);
-        void getPolymorphed() const;
-};
-
+        AWeapon(std::string const & name, int apcost, int damage);
+        virtual ~AWeapon();
+        AWeapon &operator=(const AWeapon &aw);
+        std::string const getName() const;
+        int getAPCost() const;
+        int getDamage() const;
+        virtual void attack() const = 0;
+}
 #endif

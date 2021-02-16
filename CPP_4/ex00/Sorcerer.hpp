@@ -22,6 +22,7 @@ class Sorcerer
     protected:
     std::string name;
     std::string title;
+
     public:
     void set_name(std::string const name);
     std::string get_name(void) const;
@@ -31,6 +32,7 @@ class Sorcerer
     Sorcerer(void);
     Sorcerer(std::string const name, std::string const title);
     virtual ~Sorcerer(void);
+    Sorcerer &operator=(const Sorcerer &So);
 };
 std::ostream &operator<<(std::ostream &os, Sorcerer &so);
 #endif

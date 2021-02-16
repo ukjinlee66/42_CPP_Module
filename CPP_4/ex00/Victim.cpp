@@ -13,10 +13,6 @@
 #include "Victim.hpp"
 
 
-Victim::Victim(void)
-{
-    this->set_name("default Victim");
-}
 Victim::Victim(Victim const &vi)
 {
     this->set_name(vi.get_name());
@@ -48,4 +44,9 @@ std::ostream &operator<<(std::ostream &os, Victim &vi)
 {
     os << "I'm "<<vi.get_name()<<" and I like otters!"<<std::endl;
     return (os);
+}
+Victim &Victim::operator=(const Victim &vi)
+{
+    this->set_name(vi.get_name());
+    return (*this);
 }

@@ -12,15 +12,13 @@
 
 #include "Peon.hpp"
 
-Peon::Peon(void)
-{
-    this->set_name("default Peon");
-}
-Peon::Peon(Peon const &co) : name(co.get_name())
+
+Peon::Peon(std::string name) : Victim(name)
 {
     std::cout<<"Zog zog."<<std::endl;
 }
-Peon::Peon(std::string name) : name(name)
+
+Peon::Peon(Peon const &co) : Victim(co.get_name())
 {
     std::cout<<"Zog zog."<<std::endl;
 }

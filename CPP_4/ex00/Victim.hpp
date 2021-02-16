@@ -18,10 +18,11 @@
 
 class Victim
 {
-    protected:
+    private:
         std::string name;
-    public:
         Victim(void);
+    public:
+        
         Victim(Victim const &vi);
         Victim(std::string const name);
         virtual ~Victim(void);
@@ -29,6 +30,7 @@ class Victim
         std::string get_name(void) const;
         virtual void getPolymorphed() const;
         void polymorph(Victim const &) const;
+        Victim &operator=(const Victim &vi);
 };
 std::ostream &operator<<(std::ostream &os, Victim &vi);
 #endif
