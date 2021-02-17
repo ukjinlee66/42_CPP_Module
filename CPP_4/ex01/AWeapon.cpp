@@ -22,10 +22,18 @@ AWeapon::~AWeapon()
 }
 AWeapon &AWeapon::operator=(const AWeapon &aw)
 {
+    if (this == &aw)
+        return (*this);
     this->name = aw.getName();
     this->action_point = aw.getAPCost();
     this->damage_point = aw.getDamage();
     return (*this);
+}
+AWeapon::AWeapon(const AWeapon &aw)
+{
+    this->name = aw.getName();
+    this->damage_point = aw.getDamage();
+    this->action_point = aw.getAPCost();
 }
 std::string const AWeapon::getName() const
 {

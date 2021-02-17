@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 22:46:39 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/16 22:46:40 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/17 16:34:31 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/17 16:34:32 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef TACTICALMARINE_HPP
+#define TACTICALMARINE_HPP
 #include <iostream>
 #include <string>
-#include "Enemy.hpp"
-class RadScorpion : public Enemy
+class TackticalMarine
 {
-    private:
     public:
-        RadScorpion(void);
-        virtual ~RadScorpion(void);
-        RadScorpion (const RadScorpion &ra);
-        RadScorpion &operator=(const RadScorpion &ra);
+        
 };
 
 #endif

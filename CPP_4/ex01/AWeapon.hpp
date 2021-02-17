@@ -21,14 +21,14 @@ class AWeapon
         std::string name;
         int         damage_point;
         int         action_point;
-        AWeapon(void);
     public:
         AWeapon(std::string const & name, int apcost, int damage);
+        AWeapon(const AWeapon &aw);
         virtual ~AWeapon();
         AWeapon &operator=(const AWeapon &aw);
         std::string const getName() const;
         int getAPCost() const;
         int getDamage() const;
         virtual void attack() const = 0;
-}
+};
 #endif

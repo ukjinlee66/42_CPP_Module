@@ -13,10 +13,10 @@
 #include "AWeapon.hpp"
 #include "Character.hpp"
 #include "Enemy.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
 #include "RadScorpion.hpp"
 #include "SuperMutant.hpp"
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
 
 int main()
 {
@@ -26,13 +26,13 @@ int main()
 
     Enemy* b = new RadScorpion();
     AWeapon* pr = new PlasmaRifle();
-    Aweapon* pf = new PowerFist();
+    AWeapon* pf = new PowerFist();
 
     me->equip(pr);
     std::cout << *me;
     me->equip(pf);
     
-    me->attaack(b);
+    me->attack(b);
     std::cout << *me;
     me->equip(pr);
     std::cout << *me;

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 22:46:39 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/16 22:46:40 by youlee           ###   ########.fr       */
+/*   Created: 2021/02/17 16:35:10 by youlee            #+#    #+#             */
+/*   Updated: 2021/02/17 16:35:11 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef ISPACEMARINE_HPP
+#define ISPACEMARINE_HPP
 #include <iostream>
 #include <string>
-#include "Enemy.hpp"
-class RadScorpion : public Enemy
+
+class ISpaceMarine
 {
-    private:
     public:
-        RadScorpion(void);
-        virtual ~RadScorpion(void);
-        RadScorpion (const RadScorpion &ra);
-        RadScorpion &operator=(const RadScorpion &ra);
+        virtual ~ISpaceMarine() {}
+        virtual ISpaceMarine* clone() const = 0;
+        virtual void battleCry() const = 0;
+        virtual void rangedAttack() const = 0;
+        virtual void meleeAttack() const = 0;
 };
 
 #endif

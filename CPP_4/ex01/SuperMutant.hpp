@@ -10,4 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#ifndef SUPERMUTANT_HPP
+#define SUPERMUTANT_HPP
+#include <iostream>
+#include <string>
+#include "Enemy.hpp"
+class SuperMutant : public Enemy
+{
+    private:
+    public:
+        void takeDamage(int amount);
+        SuperMutant(void);
+        virtual ~SuperMutant(void);
+        SuperMutant &operator=(const SuperMutant &su);
+        SuperMutant (const SuperMutant &su);
+};
+#endif
