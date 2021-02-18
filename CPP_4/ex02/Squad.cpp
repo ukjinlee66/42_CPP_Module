@@ -12,21 +12,54 @@
 
 #include "Squad.hpp"
 
-Squad::Squad(void)
+Squad::Squad(void) : list(NULL)
 {
 
 }
 Squad::~Squad(void)
 {
-
+    unit *next;
+    for (int i=0;i<this->getCount();i++)
+    {
+        next = this->list->next;
+        delete this->list->next;
+        delete this->list;
+        this->list = next;
+    }
 }
 Squad::Squad(const Squad &sq)
 {
+    unit *head;
+    unit *cur_list;
+    unit *cur_list_next;
+    unit *copy_list = sq.list;
+    
+    cur_list = this->list;
+    cur_list_next = cur_list->next;
+    head = cur_list;
 
+    for(int i=0;i < this->getCount();i++)
+    {
+        delete cur_list;
+        cur_list = cur_list_next;
+        cur_list_next = cur_list->next;
+    }
+    cur_list = head;
+
+    for(int i=0;i< this->getCount();i++)
+    {
+        ISpaceMarine *temp = copy_list->marine->clone();
+        this->push(temp);
+        copy_list = copy_list->next;
+    }
+    delete sq.list;
 }
 Squad &Squad::operator=(const Squad &sq)
 {
-
+    if (this == &sq)
+        return (*this);
+    this->list = sq.list;
+    return (*this);
 }
 int Squad::getCount() const
 {

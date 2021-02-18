@@ -12,10 +12,13 @@
 
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
+#include "Squad.hpp"
+#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
 
 int main()
 {
-    ISpaceMarine* bob = new TacticalMarine;
+    ISpaceMarine* bob = new TackticalMarine;
     ISpaceMarine* jim = new AssaultTerminator;
     ISquad* vlc = new Squad;
     vlc->push(bob);

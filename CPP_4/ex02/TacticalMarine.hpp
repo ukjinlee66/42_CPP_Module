@@ -12,12 +12,22 @@
 
 #ifndef TACTICALMARINE_HPP
 #define TACTICALMARINE_HPP
-#include <iostream>
-#include <string>
-class TackticalMarine
+
+# include <iostream>
+# include <string>
+# include "ISpaceMarine.hpp"
+
+class TackticalMarine : public ISpaceMarine
 {
     public:
-        
+        TackticalMarine();
+        TackticalMarine(const TackticalMarine &ta);
+        virtual ~TackticalMarine();
+        TackticalMarine &operator=(const TackticalMarine &ta);
+        ISpaceMarine* clone() const;
+        void battleCry() const;
+        void rangedAttack() const;
+        void meleeAttack() const;
 };
 
 #endif
