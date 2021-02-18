@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
+#include <iostream>
+#include <string>
+#include "IMateriaSource.hpp"
+class MateriaSource : public IMateriaSource
+{
+    private:
+    public:
+        MateriaSource &operator=(const MateriaSource &ma);
+        MateriaSource(const MateriaSource &ma);
+        virtual ~MateriaSource();
+        
+        void learnMateria(AMateria*) = 0;
+        AMateria* createMateria(std::string const & type) = 0;
+};
+#endif

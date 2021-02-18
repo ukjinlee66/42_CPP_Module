@@ -12,17 +12,19 @@
 
 #include "Squad.hpp"
 
-Squad::Squad(void) : list(NULL)
+Squad::Squad(void) : list(NULL), cnt(0)
 {
 
 }
 Squad::~Squad(void)
 {
+    std::cout<<"destructor squad\n";
     unit *next;
-    for (int i=0;i<this->getCount();i++)
+
+    for (int i=0; i < this->getCount(); i++)
     {
         next = this->list->next;
-        delete this->list->next;
+        delete this->list->marine;
         delete this->list;
         this->list = next;
     }
@@ -59,33 +61,24 @@ Squad &Squad::operator=(const Squad &sq)
     if (this == &sq)
         return (*this);
     this->list = sq.list;
+    this->cnt = sq.cnt;
     return (*this);
 }
 int Squad::getCount() const
 {
-    int cnt=0;
-
-    unit *list2 = this->list;
-    if (list2 == NULL)
-        return (0);
-    while (list2->next != NULL)
-    {
-        cnt++;
-        list2 = list2->next;
-    }
-    return (cnt + 1);
+    return (this->cnt);
 }
 ISpaceMarine* Squad::getUnit(int n) const
 {
-    int cnt=0;
-
+    int cn=0;
     unit *list2 = this->list;
     ISpaceMarine *ret;
-    if (list2 == NULL)
+
+    if (list2 == NULL || n < 0)
         return (NULL);
-    while (list2->next != NULL)
+    while (list2)
     {
-        if (cnt == n)
+        if (cn == n)
         {
             if (list2)
                 ret = list2->marine;
@@ -93,7 +86,7 @@ ISpaceMarine* Squad::getUnit(int n) const
                 ret = NULL;
             return (ret);
         }
-        cnt++;
+        cn++;
         list2 = list2->next;
     }
     return (NULL);
@@ -107,15 +100,16 @@ int Squad::push(ISpaceMarine *sm)
         this->list = new unit;
         this->list->marine = sm;
         this->list->next = NULL;
+        this->cnt++;
     }
     else
     {
-        while (this->list->next != NULL)
+        while (this->list->next)
             this->list = this->list->next;
         this->list->next = new unit;
-        this->list = this->list->next;
-        this->list->marine = sm;
-        this->list->next = NULL;
+        this->list->next->marine = sm;
+        this->list->next->next = NULL;
+        this->cnt++;
     }
     return (0);
 }

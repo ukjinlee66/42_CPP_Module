@@ -27,6 +27,7 @@ class Squad : public ISquad
             struct units* next;
         }unit;
         unit *list;
+        int  cnt;
     public:
         Squad(void);
         virtual ~Squad(void);
