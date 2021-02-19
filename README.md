@@ -21,6 +21,7 @@
 ## CPP Module 04 Reference<br>
 - <https://pacs.tistory.com/entry/C-상속과-다형성-Inheritance-Polymorphism> - inheritance, polymorphism<br>
 - <https://makefortune2.tistory.com/224> - upcasting<br>
+- <https://m.blog.naver.com/PostView.nhn?blogId=hyungjungkim&logNo=60202456568&proxyReferer=https:%2F%2Fwww.google.com%2F> - c++ Cross reference header<br>
 ## CPP Module 05 Reference<br>
 ## CPP Module 06 Reference<br>
 ## CPP Module 07 Reference<br>
