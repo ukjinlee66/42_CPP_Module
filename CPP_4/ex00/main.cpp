@@ -20,9 +20,11 @@ int main(void)
 
     Victim jim("Jimmy");
     Peon joe("Joe");
+    Neon jom("Jom");
     
-    std::cout << robert << jim << joe;
+    std::cout << robert << jim << joe << jom;
     robert.polymorph(jim);
     robert.polymorph(joe);
+    robert.polymorph(jom);
     return (0);
 }

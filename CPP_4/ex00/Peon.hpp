@@ -20,14 +20,24 @@
 class Peon : public Victim
 {
     private:
-        std::string name;
         Peon(void);
     public:
-        void set_name(std::string const name);
-        std::string get_name(void) const;
         Peon(Peon const &co);
         Peon(std::string name);
+        Peon &operator=(const Peon &po);
         virtual ~Peon(void);
+        void getPolymorphed() const;
+};
+
+class Neon : public Victim
+{
+    private:
+        Neon(void);
+    public:
+        Neon(Neon const &co);
+        Neon(std::string name);
+        Neon &operator=(const Neon &po);
+        virtual ~Neon(void);
         void getPolymorphed() const;
 };
 

@@ -28,13 +28,39 @@ Peon::~Peon(void)
 }
 void Peon::getPolymorphed(void) const
 {
-    std::cout<<this->get_name()<<" has been turned into a pink pony!"<<std::endl;
+    std::cout<< get_name() << " has been turned into a pink pony!" << std::endl;
 }
-void Peon::set_name(std::string const name)
+Peon &Peon::operator=(const Peon &po)
 {
-    this->name = name;
+    if (this == &po)
+        return (*this);
+    Victim::operator=(po);
+    return (*this);
 }
-std::string Peon::get_name(void) const
+
+
+
+Neon::Neon(std::string name) : Victim(name)
 {
-    return (this->name);
+    std::cout<<"Nog Nog."<<std::endl;
+}
+
+Neon::Neon(Neon const &co) : Victim(co.get_name())
+{
+    std::cout<<"Nog Nog."<<std::endl;
+}
+Neon::~Neon(void)
+{
+    std::cout<<"Neon is dead"<<std::endl;
+}
+void Neon::getPolymorphed(void) const
+{
+    std::cout<< get_name() << " has been turned into a neon pony!"<<std::endl;
+}
+Neon &Neon::operator=(const Neon &po)
+{
+    if (this == &po)
+        return (*this);
+    Victim::operator=(po);
+    return (*this);
 }
