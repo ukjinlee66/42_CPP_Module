@@ -14,6 +14,7 @@
 #define IMATERIASOURCE_HPP
 #include <iostream>
 #include <string>
+class AMateria;
 class IMateriaSource
 {
     public:

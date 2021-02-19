@@ -15,15 +15,18 @@
 #include <iostream>
 #include <string>
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 class MateriaSource : public IMateriaSource
 {
     private:
+        AMateria *_in[4];
     public:
+        MateriaSource(void);
         MateriaSource &operator=(const MateriaSource &ma);
         MateriaSource(const MateriaSource &ma);
         virtual ~MateriaSource();
         
-        void learnMateria(AMateria*) = 0;
-        AMateria* createMateria(std::string const & type) = 0;
+        void learnMateria(AMateria *am);
+        AMateria* createMateria(std::string const & type);
 };
 #endif

@@ -11,9 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
-#endif ICHARACTER_HPP
+#define ICHARACTER_HPP
 #include <iostream>
 #include <string>
+
+class AMateria;
+class ICharacter;
+
 class ICharacter
 {
     public:

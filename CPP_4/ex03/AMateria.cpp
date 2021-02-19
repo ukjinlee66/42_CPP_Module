@@ -16,7 +16,7 @@ AMateria::AMateria(const AMateria &am) : _type(am._type), _xp(am._xp)
 {
 
 }
-AMateria::AMateria(std::string const & type) : _type(am._type), _xp(0)
+AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
 {
 
 }
@@ -38,7 +38,7 @@ unsigned int AMateria::getXP() const
 {
     return (this->_xp);
 }
-void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter&)
 {
     this->_xp += 10;
 }

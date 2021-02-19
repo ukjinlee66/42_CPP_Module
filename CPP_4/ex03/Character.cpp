@@ -69,11 +69,12 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx > 3)
         return;
-    this->inven[i] = NULL;
+    this->inven[idx] = NULL;
 }
 void Character::use(int idx, ICharacter& target)
 {
     if (idx < 0 || 3 < idx)
         return ;
-    this->inven[idx]->use(target);
+    if (this->inven[idx])
+        this->inven[idx]->use(target);
 }
