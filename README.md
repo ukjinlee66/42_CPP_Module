@@ -23,6 +23,7 @@
 - <https://makefortune2.tistory.com/224> - upcasting<br>
 - <https://m.blog.naver.com/PostView.nhn?blogId=hyungjungkim&logNo=60202456568&proxyReferer=https:%2F%2Fwww.google.com%2F> - c++ Cross reference header<br>
 ## CPP Module 05 Reference<br>
+- <https://www.devoops.kr/61> - exception class, function <br>
 ## CPP Module 06 Reference<br>
 ## CPP Module 07 Reference<br>
 ## CPP Module 08 Reference<br>
