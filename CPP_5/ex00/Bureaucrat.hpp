@@ -24,6 +24,8 @@ class Bureaucrat
     public:
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat & bu);
+        Bureaucrat(void);
+        Bureaucrat &operator=(const Bureaucrat &bu);
         virtual ~Bureaucrat();
         class GradeTooHighException : public std::exception{
                 virtual const char* what() const throw();

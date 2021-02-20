@@ -11,6 +11,17 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+Form &Form::operator=(const Form &fo)
+{
+    if (this == &fo)
+        return (*this);
+    this->sign = fo.getSigned();
+    this->name = fo.getName();
+    this->grade_required_to_sign = fo.get_req_sign_grade();
+    this->grade_required_to_execute = fo.get_req_exec_grade();
+    return (*this);
+}
+Form::Form(void) {}
 Form::Form(bool si, std::string name, int grs, int gre) : sign(si), name(name), grade_required_to_sign(grs), grade_required_to_execute(gre)
 {
     if (this->grade_required_to_sign < 1 || this->grade_required_to_execute < 1 ) (throw Form::GradeTooHighException());

@@ -29,6 +29,8 @@ class Form
         Form(bool si, std::string name, int grs, int gre);
         virtual ~Form();
         Form(const Form &fo);
+        Form &operator=(const Form &fo);
+        Form(void);
 
         class GradeTooHighException : public std::exception
         {

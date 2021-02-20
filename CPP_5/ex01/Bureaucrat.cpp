@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+Bureaucrat::Bureaucrat(void){}
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
     if (this->_grade < 1) throw (Bureaucrat::GradeTooHighException());
     if (this->_grade > 150) throw (Bureaucrat::GradeTooLowException());
@@ -20,6 +21,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat & bu) : _name(bu._name), _grade(bu._grad
     if (this->_grade > 150) throw (Bureaucrat::GradeTooLowException());
 }
 Bureaucrat::~Bureaucrat() {}
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bu)
+{
+    if (this == &bu)
+        return (*this);
+    this->_name = bu.getName();
+    this->_grade = bu.getGrade();
+    return (*this);
+}
 std::string Bureaucrat::getName() const { return (this->_name); }
 int Bureaucrat::getGrade() const { return (this->_grade); }
 const char* Bureaucrat::GradeTooHighException::what() const throw(){ return ("Grade Too High!!"); }
