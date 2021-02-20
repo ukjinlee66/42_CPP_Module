@@ -17,13 +17,13 @@
 # include <string>
 # include "ISpaceMarine.hpp"
 
-class TackticalMarine : public ISpaceMarine
+class TacticalMarine : public ISpaceMarine
 {
     public:
-        TackticalMarine();
-        TackticalMarine(const TackticalMarine &ta);
-        virtual ~TackticalMarine();
-        TackticalMarine &operator=(const TackticalMarine &ta);
+        TacticalMarine();
+        TacticalMarine(const TacticalMarine &ta);
+        virtual ~TacticalMarine();
+        TacticalMarine &operator=(const TacticalMarine &ta);
         ISpaceMarine* clone() const;
         void battleCry() const;
         void rangedAttack() const;

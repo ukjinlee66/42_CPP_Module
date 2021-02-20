@@ -18,7 +18,6 @@ Squad::Squad(void) : list(NULL), cnt(0)
 }
 Squad::~Squad(void)
 {
-    std::cout<<"destructor squad\n";
     unit *next;
 
     for (int i=0; i < this->getCount(); i++)

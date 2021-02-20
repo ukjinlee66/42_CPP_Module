@@ -12,37 +12,37 @@
 
 #include "TacticalMarine.hpp"
 
-TackticalMarine::TackticalMarine()
+TacticalMarine::TacticalMarine()
 {
     std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
-TackticalMarine::TackticalMarine(const TackticalMarine &)
+TacticalMarine::TacticalMarine(const TacticalMarine &)
 {
 
 }
-TackticalMarine::~TackticalMarine()
+TacticalMarine::~TacticalMarine()
 {
     std::cout << "Aaargh..." <<std::endl;
 }
-TackticalMarine &TackticalMarine::operator=(const TackticalMarine &ta)
+TacticalMarine &TacticalMarine::operator=(const TacticalMarine &ta)
 {
     if (this == &ta)
         return (*this);
     return (*this);
 }
-ISpaceMarine* TackticalMarine::clone() const
+ISpaceMarine* TacticalMarine::clone() const
 {
-    return (new TackticalMarine(*this));
+    return (new TacticalMarine(*this));
 }
-void TackticalMarine::battleCry() const
+void TacticalMarine::battleCry() const
 {
     std::cout << "For the holy PLOT!" << std::endl;
 }
-void TackticalMarine::rangedAttack() const
+void TacticalMarine::rangedAttack() const
 {
     std::cout << "* attacks with a bolter *" << std::endl;
 }
-void TackticalMarine::meleeAttack() const
+void TacticalMarine::meleeAttack() const
 {
     std::cout << "* attacks with a chainsword *" << std::endl;
 }

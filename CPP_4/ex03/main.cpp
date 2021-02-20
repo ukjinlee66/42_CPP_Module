@@ -25,14 +25,24 @@ int main()
     src->learnMateria(new Cure());
 
     ICharacter* me = new Character("me");
-    AMateria* tmp;
+    AMateria* tmp = NULL;
+    AMateria* tmp2 = NULL;
     tmp = src->createMateria("ice");
     me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
+    std::cout << "[+] ICE = " << tmp->getType() << std::endl;
+    tmp2 = src->createMateria("cure");
+    me->equip(tmp2);
+    std::cout << "[+] CURE = " << tmp2->getType() << std::endl;
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    std::cout << "[+] " << tmp->getType() << " xp = " << tmp->getXP() << std::endl;
+    std::cout << "[+] " << tmp2->getType() << " xp = " << tmp2->getXP() << std::endl;
+
+    
+    me->use(0, *bob);
+    std::cout << "[+] " << tmp->getType() << " xp = " << tmp->getXP() << std::endl;
+    std::cout << "[+] " << tmp2->getType() << " xp = " << tmp2->getXP() << std::endl;
 
     delete bob;
     delete me;
