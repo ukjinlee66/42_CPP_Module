@@ -15,7 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
-
+#include "Intern.hpp"
 int main()
 {
     srand(time(NULL));
@@ -98,5 +98,12 @@ int main()
 	delete pres;
 	delete robot;
 
+	std::cout << "===============Intern===================\n";
+	Intern  someRandomIntern;
+	Form*   rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	std::cout << rrf->getType() << std::endl;
+	rrf = someRandomIntern.makeForm("shrubbery creation", "bob");
+	std::cout << rrf->getType() << std::endl;
 	return (0);
 }

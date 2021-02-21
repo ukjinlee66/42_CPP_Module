@@ -12,7 +12,7 @@
 
 #include "PresidentialPardonForm.hpp"
 PresidentialPardonForm::PresidentialPardonForm(void) {}
-PresidentialPardonForm::PresidentialPardonForm(std::string type) : Form(false, "PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string type) : Form(false, "presidential pardon", 25, 5)
 {
     this->setType(type);
 }

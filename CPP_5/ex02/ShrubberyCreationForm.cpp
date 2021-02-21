@@ -30,7 +30,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << "*************call shru execute*************\n";
     Form::execute(executor);
     std::ofstream file;
 

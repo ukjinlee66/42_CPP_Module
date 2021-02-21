@@ -12,7 +12,7 @@
 
 #include "RobotomyRequestForm.hpp"
 RobotomyRequestForm::RobotomyRequestForm(void) {}
-RobotomyRequestForm::RobotomyRequestForm(std::string type) : Form(false, "RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string type) : Form(false, "robotomy request", 72, 45)
 {
     this->setType(type);
 }

@@ -12,7 +12,7 @@
 
 #include "ShrubberyCreationForm.hpp"
 ShrubberyCreationForm::ShrubberyCreationForm(void) {}
-ShrubberyCreationForm::ShrubberyCreationForm(std::string type) : Form(false, "ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string type) : Form(false, "shrubbery creation", 145, 137)
 {
     this->setType(type);
 }
@@ -30,7 +30,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << "*************call shru execute*************\n";
     Form::execute(executor);
     std::ofstream file;
 

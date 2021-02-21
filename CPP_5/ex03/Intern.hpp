@@ -14,7 +14,11 @@
 #define INTERN_HPP
 #include <iostream>
 #include <string>
+#include <exception>
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
@@ -24,11 +28,14 @@ class Intern
         Intern &operator=(const Intern &in);
         virtual ~Intern(void);
         Form* makeForm(std::string const &name, std::string const &target);
-}
+        class FormNotExist: public std::exception {
+		    virtual const char* what() const throw();
+	    };
+};
 
 struct Pair
 {
     std::string name;
-    std::string target;
-}_pair;
+    Form* (*func)(std::string name);
+};
 #endif
