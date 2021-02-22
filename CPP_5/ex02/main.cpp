@@ -22,7 +22,7 @@ int main()
 
 	Bureaucrat supervisor("Supervisor", 1);
 	std::cout << supervisor << std::endl;
-	Bureaucrat francis("Francis", 10);
+	Bureaucrat francis("Francis", 25);
 	std::cout << francis << std::endl;
 
 	Form *shrub = new ShrubberyCreationForm("home");
