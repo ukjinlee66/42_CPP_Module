@@ -26,5 +26,7 @@
 - <https://www.devoops.kr/61> - exception class, function <br>
 - <https://boycoding.tistory.com/233> - function pointer<br>
 ## CPP Module 06 Reference<br>
+- <https://javawoo.tistory.com/40> - c++ cast<br>
+- <https://m.blog.naver.com/PostView.nhn?blogId=jonghong0316&logNo=140153111059&proxyReferer=https:%2F%2Fwww.google.com%2F> - Nan checking<br>
 ## CPP Module 07 Reference<br>
 ## CPP Module 08 Reference<br>
