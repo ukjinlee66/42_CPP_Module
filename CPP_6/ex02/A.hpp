@@ -6,7 +6,7 @@
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:40:18 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/22 20:40:19 by youlee           ###   ########.fr       */
+/*   Updated: 2021/02/23 15:45:14 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 class A : public Base
 {
     public:
-        virtual ~A();
-}
+        virtual ~A() {};
+};
 #endif
