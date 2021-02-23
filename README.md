@@ -29,4 +29,6 @@
 - <https://javawoo.tistory.com/40> - c++ cast<br>
 - <https://m.blog.naver.com/PostView.nhn?blogId=jonghong0316&logNo=140153111059&proxyReferer=https:%2F%2Fwww.google.com%2F> - Nan checking<br>
 ## CPP Module 07 Reference<br>
+- <https://blockdmask.tistory.com/43> - template<br>
 ## CPP Module 08 Reference<br>
+- <http://www.tcpschool.com/cpp/cpp_container_intro> - STL container<br>
