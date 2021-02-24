@@ -15,35 +15,41 @@
 #include <iostream>
 #include <exception>
 #include <algorithm>
-#include <list>
+#include <set>
+#include <cmath>
 class Span
 {
 	private:
-		std::vector<int> vec;
-		long num;
+		std::multiset<int> ms;
+		unsigned int max_size;
+		int	max_numb;
+		int min_numb;
 	public:
 		Span(void);
-		Span(unsigned int N);
+		Span(unsigned int n);
 		Span(const Span &s);
 		Span &operator=(const Span &s);
 		virtual ~Span(void);
-		void addNumber(int N);
-		long long shortestSpan(void);
-		long long longestSpan(void);
+		void addNumber(int val);
+		template <typename T>
+		void addNumber(T start, T end);
+		long long shortestSpan(void) const;
+		long long longestSpan(void) const;
 
-		class NotFoundSpan : public std:exception
+		class NotEnoughSpace : public std::exception
 		{
 			const char *what() const throw()
 			{
 				return ("Not Found Span!\n");
 			}
 		};
-		class Number_Full : public std::exception
+		class Span_Full : public std::exception
 		{
 			const char *what() const throw()
 			{
-				return ("Number is Full!\n");
+				return ("Span is Full!\n");
 			}
 		};
 };
+#include "span.ipp"
 #endif
