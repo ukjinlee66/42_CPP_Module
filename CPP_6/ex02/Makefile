@@ -4,8 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp \
-	   Base.cpp
+SRCS = main.cpp
 
 INCLUDES = -I .
 
