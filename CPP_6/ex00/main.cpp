@@ -6,7 +6,7 @@
 /*   By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 16:48:25 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/22 16:48:27 by youlee           ###   ########.fr       */
+/*   Updated: 2021/02/23 23:06:58 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 #include <cstdlib>
 #include <cmath>
 #include <cctype>
-
-bool is_digit(std::string str) 
-{
-    for(size_t i=0;i<str.size();i++)
-        if (isalpha(str[i]))
-            return false;
-    return true;
-}
 
 void strtochar(double num)
 {
@@ -71,12 +63,11 @@ void Convert(char *argv)
 {
     double in;
     std::string str(argv); //convert char* to string
-    if (is_digit(str) == false)
-    {
-        std::cout << "input data is not decimal!" << std::endl;
-        return ;
-    }
     in = std::stod(str); // convert string to double
+	if (str == "+inf" || str == "+inff" || str == "inf" || str == "inff")
+		in = static_cast<double>(INFINITY);
+	if (str == "-inf" || str == "-inff")
+		in = static_cast<double>(-INFINITY);
     strtochar(in);
     strtoint(in);
     strtofloat(in);
