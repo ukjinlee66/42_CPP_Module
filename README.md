@@ -1,4 +1,4 @@
-[![HitCount](http://hits.dwyl.com/Youkjin Lee/42_CPP_Module.svg)](http://hits.dwyl.com/Youkjin Lee/42_CPP_Module)
+[![HitCount](http://hits.dwyl.com/YoukjinLee/42_CPP_Module.svg)](http://hits.dwyl.com/YoukjinLee/42_CPP_Module)
 # 42_CPP_Module<br><br>
 
 ## CPP Module 00 Reference<br>
