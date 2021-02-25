@@ -1,4 +1,4 @@
-[![HitCount](http://hits.dwyl.com/YoukjinLee/42_CPP_Module.svg)](http://hits.dwyl.com/YoukjinLee/42_CPP_Module)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fukjinlee66%2F42_CPP_Module&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 # 42_CPP_Module<br><br>
 
 ## CPP Module 00 Reference<br>
