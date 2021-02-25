@@ -1,3 +1,4 @@
+[![HitCount](http://hits.dwyl.com/ukjinlee66/42_CPP_Module.svg)](http://hits.dwyl.com/ukjinlee66/42_CPP_Module)
 # 42_CPP_Module<br><br>
 
 ## CPP Module 00 Reference<br>
