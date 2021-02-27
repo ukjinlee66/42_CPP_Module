@@ -12,12 +12,13 @@
 
 #include <iostream>
 #include "iter.hpp"
-
 int main()
 {
 	char ar[5] = "aBCd";
-	iter(ar, 5, lower);
-	for(int i=0;i<5;i++)
-		std::cout<< ar[i] <<std::endl;
+	iter(ar, 4, display);
+	std::cout << std::endl;
+	std::string str[2] = {"abbb", "cddd"};
+	iter(str, 2, display);
+	std::cout << std::endl;
 	return (0);
 }

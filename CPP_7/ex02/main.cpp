@@ -20,9 +20,18 @@ int main()
 	for (size_t i = 0; i < intR.size(); i++)
 	{
 		intR[i] = i;
-		std::cout << intR[i] << " ";
+		std::cerr << intR[i] << " ";
 	}
 	std::cout << std::endl;
+	std::cout<<"error case" <<std::endl;
+	try
+	{
+		std::cout<<intR[-2]<<std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout<<e.what()<<std::endl;
+	}
 	for (size_t i = 0; i < intRR.size(); i++)
 	{
 		std::cout << intRR[i] << " ";
