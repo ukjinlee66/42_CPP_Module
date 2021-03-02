@@ -6,7 +6,7 @@
 /*   By: youlee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:01:58 by youlee            #+#    #+#             */
-/*   Updated: 2021/02/23 20:31:43 by youlee           ###   ########.fr       */
+/*   Updated: 2021/03/02 12:38:14 by youlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@
 #include <algorithm>
 #include <set>
 #include <cmath>
+#include <vector>
 class Span
 {
 	private:
 		std::multiset<int> ms;
 		unsigned int max_size;
-		int	max_numb;
-		int min_numb;
 	public:
 		Span(void);
 		Span(unsigned int n);
@@ -32,24 +31,20 @@ class Span
 		virtual ~Span(void);
 		void addNumber(int val);
 		template <typename T>
-		void addNumber(T start, T end);
+		void addNumber(T start, T end)
+		{
+			this->ms.size() + std::distance(start, end) > this->max_size ? throw(Span::Span_Full()) : this->ms.insert(start,end);
+		}
 		long long shortestSpan(void) const;
 		long long longestSpan(void) const;
 
 		class NotEnoughSpace : public std::exception
 		{
-			const char *what() const throw()
-			{
-				return ("Not Found Span!\n");
-			}
+			virtual const char *what() const throw();
 		};
 		class Span_Full : public std::exception
 		{
-			const char *what() const throw()
-			{
-				return ("Span is Full!\n");
-			}
+			virtual const char *what() const throw();
 		};
 };
-#include "span.ipp"
 #endif

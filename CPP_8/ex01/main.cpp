@@ -22,5 +22,29 @@ int main()
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+	Span sp2(2);
+	sp2.addNumber(2147483647);
+	sp2.addNumber(-2147483648);
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
+	std::cout << "============= Exception case =============" << std::endl;
+	Span sp3(1);
+	sp3.addNumber(2);
+	try
+	{
+		std::cout << sp3.longestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		sp3.addNumber(4);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
